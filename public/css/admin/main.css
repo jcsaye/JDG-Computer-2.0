@@ -1,0 +1,29 @@
+*{
+    padding: 0 ;
+    margin: 0 auto;
+}
+body{
+    
+    background-color: teal;
+    color: rgb(255, 9, 9);
+    font-family: Poiret one, cursive;
+}
+footer{
+    background: teal;
+    padding: 20px;
+}
+
+.page{
+    background:whitesmoke;
+    border-radius: 1em;
+    margin: 1em;
+    min-height: 400px;
+    padding: 1em;
+}
+.logo{
+    border-radius: 25px;
+}
+.text-area{
+    width: calc(100% - 50px);
+    height: auto;
+}

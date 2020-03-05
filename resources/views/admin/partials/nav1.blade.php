@@ -7,11 +7,9 @@
     </button>
     <div id="my-nav" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link btn btn-outline-primary" href="{{route('product.index')}}">Productos<span class="sr-only">(current)</span></a>
-            </li>
+           
             <li class="nav-item">
-                <a class="nav-link btn btn-outline-primary" href="{{route('category.index')}}" tabindex="-1" aria-disabled="true">Categorias</a>
+                <a class="nav-link btn btn-outline-primary" href="{{url('/admin/home')}}" tabindex="-1" aria-disabled="true">home</a>
             </li>
             @guest
             

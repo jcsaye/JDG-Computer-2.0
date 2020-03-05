@@ -96,7 +96,7 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function update(Request $request, Category $category)
     {
 
@@ -105,6 +105,8 @@ class CategoryController extends Controller
         $category->slug=($request->get('name'));
 
         $update=$category->save();
+
+        return redirect()->route('category.index');
     }
 
     /**

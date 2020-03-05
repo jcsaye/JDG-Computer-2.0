@@ -3,9 +3,9 @@
 @section('content')
 
     <h1>Detalle de producto</h1>
-
+   
     <div class="product-block">
-    <img src="{{$Product->image}}" style="width:350px" alt="">
+    <img src="/storage/{{$Product->image}}" style="width:350px" alt="">
     </div>
     <div class="product-block">
     <h3>{{$Product->name}}</h3>
@@ -13,13 +13,14 @@
     <p>{{$Product->description}}</p>
     <p>precio:${{$Product->price}}</p>
     <p>
-    <a href="{{route('cart-show')}}"class="btn btn-outline-primary">lo quiero</a>
+    <a href="{{route('cart-add',$Product['slug'])}}"class="btn btn-outline-primary">lo quiero</a>
     </p>
     </div>
     </div>
-    <a href="{{route('inicio')}}" class="btn btn-outline-primary">
+    <a href="{{route('inicio')}}" class="btn btn-outline-primary ">
       <i class="fa fa-chevron-circle-left"></i> Regresar
   </a>
+
 {{-- <button class="btn btn-warning"><a href="{{route('inicio')}}">Regresar</a></button> --}}
 {{-- <div class="container">
     <div class = "tarjeta mb-3" style="width:400px">

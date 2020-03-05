@@ -17,10 +17,8 @@
             </li>
             <li class="nav-item">
             <a class="nav-link" href="{{route('product.index')}}">Productos</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{route('category.index')}}">Categoria</a>
-            </li>
+          
+            
             @guest
             <li class="nav-item ">
                 

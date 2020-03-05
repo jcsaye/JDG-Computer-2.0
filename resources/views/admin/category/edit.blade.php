@@ -19,9 +19,11 @@
                 @include('admin.partials.errors')
             @endif --}}
           
-        <form action="{{route('category.index',$category)}}" method="post">
+        <form action="{{route('category.update',$category->id)}}" method="post">
         
             {{ csrf_field() }}
+            {{@method_field('PATCH')}}
+
             <label for="name" >nombre:</label>
             <input placeholder="nombre de la categoria..."  type="text" name="name" value="{{$category->name}}" ><br><br>
             {!!$errors->first('name','  <small>:message</small><br>')!!}

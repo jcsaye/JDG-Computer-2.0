@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Product;
 use App\Category;
+use Illuminate\Mail\Message;
 
 class ProductController extends Controller
 {
@@ -17,9 +18,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = product::orderBy('id','asc')->paginate(5);
-
-        return view ('admin.products.index', compact('products'));
+        $products = Product::paginate(5);
+       
+        // dd($products);
+        return view('admin.products.index',compact('products'));
     }
 
     /**
@@ -28,9 +30,10 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        $categories= Category::all();
-        dd($categories);
+    {  
+       $categories= Category::all();
+       $product = Product::all();
+       return view ('admin.products.create', compact('categories','product'));
     }
 
     /**
@@ -41,44 +44,53 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+       
         
   $reglas=  [
-    "nombre"=> "string|min:3|max:100|unique:productos,nombre",
-    "descripcion"=> "string|max:255",
-   "categoria"=>"integer",
-    "stock"=>"integer|min:1",
-    "precio"=>"numeric",
-    "imagen"=>"file"
+    "name"=> "required|string|min:3|max:100",
+    "description"=> "required|string|max:500",
+    "category_id"=>"integer",
+    "extract"=>"string",
+    "price"=>"numeric|required|max:5000000",
+    "visible"=>"integer",
+    "image"=>"required|file"
 ];
 
 
 
-  $mensajes = [
+  $message = [
   "string"=>"el campo :attribute   debe ser de tipo texto",
   "min"=>"el campo :attribute tiene un minimo de :min",
   "unique"=>"el campo :attribute se encuentra registrado",
   "max"=>"el campo :attribute tiene un maximo de :max",
   "numeric"=>"el campo :attribute debe ser un numero",
   "integer"=>"el campo :attribute debe ser un numero entero",
-  "imagen"=>"el campo :attribute debe ser una imagen"
+  "file"=>"el campo :attribute debe ser una imagen",
+  "required"=>"el campo :attribute esta vacio."
 
 ];
 
-  $this->validate($req, $reglas, $mensajes);
+  $this->validate($request, $reglas, $message);
 
-   $productoNuevo= new Producto();
+   $productoNuevo= new Product();
 
-   $ruta=$req->file('imagen')->store('public');
+   $ruta=$request->file('image')->store('public');
    $nombreArchivo=basename($ruta);
 
-   $productoNuevo->imagen= $nombreArchivo;
-   $productoNuevo->nombre = $req['nombre'];
-   $productoNuevo->descripcion = $req['descripcion'];
-   $productoNuevo->categoria_id = $req['categoria'];
-   $productoNuevo->stock = $req['stock'];
-   $productoNuevo->precio = $req['precio'];
+   $productoNuevo->image= $nombreArchivo;
+   $productoNuevo->name = $request['name'];
+   $productoNuevo->slug= $request->get('name');
+   $productoNuevo->description=$request['description'];
+   $productoNuevo->category_id = $request['category_id'];
+   $productoNuevo->extract = $request['extract'];
+   $productoNuevo->price = $request['price'];
+   $productoNuevo->visible= $request->has['visible'] ? 1 : 0;
 
-
+   $update= $productoNuevo->save();
+   $message = $update ? "producto creado correctamente" : "El producto no pudo crearse";
+  
+  
+   return redirect()->route('product.index')->with('message', $message);
     }
 
     /**
@@ -87,9 +99,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show(product $product)
+    {   
+
+        return $product;
     }
 
     /**
@@ -98,11 +111,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(product $product){
+       
+        $categories=Category::all();
+        return view('admin.products.edit',compact('product','categories'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -110,9 +123,22 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, product $product)
     {
-        //
+        $product->fill($request->all());
+        $product->slug=($request->get('name'));
+
+        $ruta=$request->file('image')->store('public');
+        $nombreArchivo=basename($ruta);
+        $product->image= $nombreArchivo;
+
+        $product->visible= $request->has('visible')?1:0;
+        $categories=Category::all();
+        $update=$product->save();
+        
+        $message = $update ? "producto actualizado correctamente" : "El producto no pudo actualizarse";
+
+        return redirect()->route('product.index', compact('categories','product'))->with('message', $message);
     }
 
     /**
@@ -121,8 +147,16 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+    public function destroy(product $product)
+{
+    // $id= $product["id"];
+
+    // $product = Product::find($id);
+  
+    // $product->delete();
+    $deleted = $product->delete();
+    $message= $deleted ? 'producto elimminado correctamente' : 'el producto no pudo eliminarce';
+    return redirect()->route("product.index")->with('message', $message);
+  
+}
 }

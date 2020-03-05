@@ -21,11 +21,12 @@
           
             <form action="{{route('category.store')}}" method="post">
             {{ csrf_field() }}
-            <label for="name" >nombre:</label>
-            <input placeholder="nombre de la categoria..."  type="text" name="name" value="{{old('name')}}" ><br><br>
+
+            <label  for="name" >nombre:</label>
+            <input class="form-control" placeholder="nombre de la categoria..."  type="text" name="name" value="{{old('name')}}" ><br><br>
             {!!$errors->first('name','  <small>:message</small><br>')!!}
             <label for="description" >descripcion:</label><br>
-            <textarea  name="description" rows="10" cols="50" class="text-area" >{{old('description')}}</textarea><br><br>
+            <textarea class="form-control" name="description" rows="10" cols="50" class="text-area" >{{old('description')}}</textarea><br><br>
             {!!$errors->first('description','<small>:message</small><br>')!!}
 
             <input  class="btn btn-outline-primary" type="submit" value="Agregar" name="guardar">

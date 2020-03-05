@@ -17,19 +17,13 @@
         <li class="nav-item">
             <a class="nav-link" href="#">conocenos</a>
         </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categoria</a>
-            <div class="dropdown-menu" aria-labelledby="dropdownId">
-            <a class="dropdown-item" href="{{route('cart-show')}}" >Consolas</a>
-                <a class="dropdown-item" href="#">Celulares</a>
-            </div>
-        </li>
+       
         
-    </ul>
+    
  <!-- Right Side Of Navbar -->
 
  
- <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+ 
     <!-- Authentication Links -->
     @guest
         <li class="nav-item ">

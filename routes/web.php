@@ -32,6 +32,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
+Route::get('store/{id}', [
+    'as'=> 'store-filtrado',
+    'uses'=> 'StoreController@filtrado'
+]);
 
 Route::get('product/{slug}', [
     'as'=> 'product-datail',
@@ -77,6 +81,13 @@ Route::get('compra-exitosa',[
 
 // ADMIN
 
+Route::get('admin/home', function () {
+
+    return view ('admin.home');
+});
+
 Route::resource('admin/category','Admin\CategoryController');
 
 Route::resource('admin/product', 'Admin\ProductController');
+
+Route::resource('admin/user', 'Admin\UserController');

@@ -7,7 +7,7 @@
        PRODUCTOS <a href="{{route('product.create')}}" class="btn btn-warning"><i class="fa fa-plus-circle" aria-hidden="true">Producto</i></a>
        </h1>
     
-    <h2><i class="fa fa-home fa-2x btn btn-dark" aria-hidden="true"> <a href="{{url('/admin/home')}}">home</a> </i></h2>
+    
        <div class="text-center" > </div>
        {{ $products->links() }}
     <div class="page">

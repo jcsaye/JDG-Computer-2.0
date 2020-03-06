@@ -10,6 +10,15 @@
 
 
 <div class="container-fluid ">
+    <button class="btn btn-outline-danger">
+        <a class="nav-link dropdown-toggle " href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categorias</a>
+      <div class="dropdown-menu" aria-labelledby="dropdownId">
+          @foreach ($categories as $category)
+      <a class="dropdown-item" href="{{route('store-filtrado',$category->id)}}" >{{$category->name}}</a>
+          @endforeach
+      </div>
+     </button>
+  <hr>
 <div id="products">
         <div class="row">
             @forelse ($products as $Product)

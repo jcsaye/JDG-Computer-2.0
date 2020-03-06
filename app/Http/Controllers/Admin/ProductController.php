@@ -48,7 +48,7 @@ class ProductController extends Controller
         
   $reglas=  [
     "name"=> "required|string|min:3|max:100",
-    "description"=> "required|string|max:500",
+    "description"=> "required|string|max:5000",
     "category_id"=>"integer",
     "extract"=>"string",
     "price"=>"numeric|required|max:5000000",

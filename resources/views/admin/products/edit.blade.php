@@ -5,7 +5,7 @@
 
 
 </ul>
-<div class="container-fluid">
+<div class="container">
   <div class="row">
 <div class="page-header">
 <h1>

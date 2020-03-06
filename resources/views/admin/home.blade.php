@@ -15,19 +15,19 @@
         <div class="container-fluid">
      
          <div class="row">
-             <div class="col-md-3 tablero">
+             <div class="col-md-4 tablero">
                  <div class="panel">
              <i class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
             <a href="{{url('/admin/user')}}" class="btn btn-warning btn block btn-home-admin"><h3>Usuarios</h3></a>
              </div>
              </div>
-             <div class="col-md-3 tablero">
+             <div class="col-md-4 tablero">
                  <div class="panel">
              <i class="fa fa-product-hunt fa-3x" aria-hidden="true"></i>
              <a href="{{url('/admin/product')}}" class="btn btn-warning btn block btn-home-admin"> <h3>Productos</h3></a>
             </div>
              </div>
-             <div class="col-md-3 tablero">
+             <div class="col-md-4 tablero">
                  <div class="panel">
               <i class="fa fa-cart-plus fa-3x" aria-hidden="true"></i>
               <a href="{{route('category.index')}}" class="btn btn-warning btn block btn-home-admin"><h3>Categorias</h3></a>

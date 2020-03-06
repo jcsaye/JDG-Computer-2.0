@@ -6,10 +6,16 @@
     <div id="my-nav" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-            <a class="nav-link" href="{{'/'}}">Productos <span class="sr-only ">(current)</span></a>
+            <a class="nav-link btn btn-primary" href="{{'/'}}">inicio<span class="sr-only ">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Categorias<span class="sr-only ">(current)</span></a>
+            <a class="nav-link btn btn-primary" href="{{'/'}}">Conocenos<span class="sr-only ">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link btn btn-primary" href="{{'/preguntas'}}" >Servicios<span class="sr-only ">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link btn btn-primary" href="#">Preguntas frecuentes<span class="sr-only ">(current)</span></a>
             </li>
 
             
@@ -17,7 +23,7 @@
     @guest
     <li class="nav-item ">
         
-        <a  class="nav-link" href="{{route('cart-show')}}">Carrito <i class="fa fa-cart-arrow-down fa-2x"  aria-hidden="true"></i></a>
+        <a  class="nav-link " href="{{route('cart-show')}}">Carrito <i class="fa fa-cart-arrow-down fa-2x"  aria-hidden="true"></i></a>
     </li>
     <li class="nav-item ">
         

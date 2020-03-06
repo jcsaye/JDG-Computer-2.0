@@ -11,9 +11,10 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/preguntas', function () {
+
+    return view ('preguntas');
+});
 
 
 Route::bind('product', function($slug){

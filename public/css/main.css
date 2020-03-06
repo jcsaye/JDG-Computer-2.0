@@ -3,12 +3,14 @@
     margin: 0 auto;
 }
 body{
-    background-image: url('/images/fondo3.jpg');
+    background-image: url('/images/fondo77.jpeg');
 }
 .logo{
     
 }
-
+.navegador{
+background-color: #0A022B;
+}
 /* footer-------- */}
 
 
@@ -18,6 +20,7 @@ body{
 .card-footer{
 margin-top: 20px;
 background-color: #0A022B;
+border: none;
 }
 
 footer p{
@@ -49,7 +52,9 @@ ul.redes li a{
 
 }
 
-
+.servicio{
+    color: #fff;
+}
 /* carrito---------- */
 .table-cart
 {

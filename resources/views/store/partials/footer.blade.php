@@ -2,16 +2,15 @@
     <div class="row card-group">
         <div class="item col-md-4">
             <h3>Mi tienda</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur 
-            adipisicing elit. Nisi esse officiis aperiam
-             iste similique est nobis nesciunt commodi nemo
-             saepe quia cupiditate amet ut quos fuga doloribus, accusamus voluptas illo?</p>
+            <p>compra la computadora de escritorio que necesitas para tu casa u oficina a un precio realmente bajo,disfruta de los descuentos que JDG-computer tiene para vos.Obten tus equipos con un 20% de descuento o mas.
+                abona con tarjeta de credito y otros medio de pago.
+            </p>
         </div>
         <div class="item col-md-4">
             <h3>JDG-COMPUTER</h3>
             <div class="authr-info">
             <img style="width:80px" src="https://previews.123rf.com/images/yupiramos/yupiramos1609/yupiramos160912772/62358512-avatar-hombre-sonriendo-dibujos-animados-con-barba-usuario-de-la-persona-masculina-ilustraci%C3%B3n-vectoria.jpg" alt="" class="avatar">
-            <p><a href="">@gamil.com</a> Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque earum possimus quas ipsa nam maiores delectus. Ipsam deleniti eveniet aspernatur.</p>
+            <p><a href="">@gamil.com</a> Somos lideres en provision de servicios y productos de informatica. <strong>El local mas amplio de informatico de la zona</strong>, con un moderno diseño, ubicado en la av principal de la ciudad</p>
             
         </div>
         </div>

@@ -32,7 +32,7 @@
 </head>
 <body>
 
-    @include('store.partials.nav')
+    @include('store.partials.nav1')
 
 
     @yield('content')

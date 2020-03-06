@@ -4,7 +4,7 @@
 @section('content')
 
 
-
+<div class="container-fluid">
 <div class="carrousel">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -19,36 +19,34 @@
           <div class="carousel-item active">
             <img src="carrousel/carrousel1.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              
+              
             </div>
           </div>
           <div class="carousel-item">
             <img src="carrousel/carrousel2.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              
+              
             </div>
           </div>
           <div class="carousel-item">
             <img src="carrousel/carrousel3.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+             
             </div>
           </div>
           <div class="carousel-item">
             <img src="carrousel/carrousel4.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              
+              
             </div>
           </div>
           <div class="carousel-item">
             <img src="carrousel/carrousel5.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+             
             </div>
           </div>
         </div>
@@ -62,22 +60,22 @@
         </a>
       </div>
     </div>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle " href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categoria</a>
-      <div class="dropdown-menu" aria-labelledby="dropdownId">
-          @foreach ($categories as $category)
-      <a class="dropdown-item" href="{{route('store-filtrado',$category->id)}}" >{{$category->name}}</a>
-          @endforeach
-      </div>
-     </li>
-<hr>
+            
+    <div class="container-fluid ">
+           <button class="btn btn-outline-danger">
+              <a class="nav-link dropdown-toggle " href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categorias</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                @foreach ($categories as $category)
+            <a class="dropdown-item" href="{{route('store-filtrado',$category->id)}}" >{{$category->name}}</a>
+                @endforeach
+            </div>
+           </button>
+        <hr>
 {{ $Products->links() }}
-
-<div class="container-fluid ">
 <div id="products">
         <div class="row">
             @forelse ($Products as $Product)
-        <div class="col-xs-12  col-sm-6 col-md-3  white-panel">
+        <div class="col-xs-6  col-sm-6 col-md-3  white-panel">
            <div class="product ">
            <img class="card-img-top " style="height: 143px" src="/storage/{{$Product->image}}" alt="">
                <div class="card-body">
@@ -106,14 +104,55 @@
 <hr>
 {{ $Products->links() }}
 
+<section class="productos">
+  <div class="muestra container-fluid mt-3">
+  <div class="row d-flex justify-content-center">
+      <div class="col-sm-12 col-md-6 col-lg-4 p-3">
+        <img class="img-fluid" src="/storage/banner-compu.jpg" alt="compu">
+        <p class="text-justify p-2"><strong class="h2">COMPUTADORAS </strong>Las computadoras nos permiten resolver muchas tareas importantes de cada día.Te explicamos qué es una computadora, los elementos que la compon/storageen y su invención. Conocé cuáles son las marcas recomendadas y sus mejores modelos.
+        </p>
+        </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 p-3">
+        <img class="img-fluid" src="/storage/banner-monitor.jpg" alt="compu">
+        <p class="text-justify p-2"><strong class="h2">MONITORES </strong>Seleccioná y compará las características y últimas innovaciones en los nuevos monitores led y monitores curvos. ¡Encontrá el monitor perfecto para vos!
+        </p>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 p-3">
+        <img class="img-fluid" src="/storage/banner-notebook.jpg" alt="compu">
+        <p class="text-justify p-2"><strong class="h2">NOTEBOOKS </strong>Conseguí notebooks para diseño, notebooks gamer, notebooks 14 pulgadas, notebooks 17 pulgadas y comprá al mejor precio. Te Ofrecemos Las Notebooks Con La Ultima Tecnología En Procesadores! Marcas Oficiales
+        </p>
+      </div>
+      {{-- <div class="col-sm-12 col-md-6 col-lg-4 p-3">
+        <img class="img-fluid" src="/images/banner-monitor.jpg" alt="compu">
+        <p class="text-justify p-2"><strong class="h2">MONITORES </strong>Seleccioná y compará las características y últimas innovaciones en los nuevos monitores led y monitores curvos. ¡Encontrá el monitor perfecto para vos!
+        </p>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 p-3">
+        <img class="img-fluid" src="/images/banner-impresora.jpg" alt="compu">
+        <p class="text-justify p-2"><strong class="h2">IMPRESORAS </strong>Las impresoras son excelentes herramientas para el trabajo, el hogar y el colegio. Obtené imágines increíbles con las mejores impresoras multifunción e impresora láser.
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 p-3">
+        <img class="img-fluid" src="/images/banner--redes.jpg" alt="compu">
+        <p class="text-justify p-2"><strong class="h2">OPTIMIZACION DE REDES </strong>Configuración de seguridad para prevenir accesos no autorizados. Instalación de impresoras wireless y extensores de señal. Diseño, instalación, configuración y mantenimiento.
+        </p>
+      </div> --}}
+    </div>
+  </div>
+</section>
+
 <section class="servicio">
   <div class="container-fluid">
     <div class="row justify-content-center  ">
       <div class="servicio d-flex justify-content-center col-xl-6 col-sm-6 col-lg-6">
         <img class=" img-fluid" src="/images/pc--gamer.jpg" alt="game">
       </div>
-      <div class="d-flex justify-content-center col-xl-6 col-sm-16 col-lg-6">
-        <p class="text-justify p-4 m-2 bg-primary"><strong class="h2">MUNDO GAMERS </strong>Los mejores jugadores de combos de computadoras. Elegi con confianza y empeza a jugar en un mundo del entretenimiento hecho a tu medida. A otro nivel, Pagina dedicada al mundo gamer. Especializada en la venta de hardware. Nuestros clientes nos buscan porque tenemos los mejores precios del mercado, tenemos una gran cantidad de opciones para elegir en un mercado que es muy amplio.
+      <div class=" servicio d-flex justify-content-center col-xl-6 col-sm-6 col-lg-6">
+        <p class="text-justify p-4 m-2 bg-primary"><strong class="h2" style="color:white">MUNDO GAMERS 
+          </strong>Los mejores jugadores de combos de computadoras. Elegi con confianza y 
+          empeza a jugar en un mundo del entretenimiento hecho a tu medida. A otro nivel, 
+          Pagina dedicada al mundo gamer. Especializada en la venta de hardware. Nuestros 
+          clientes nos buscan porque tenemos los mejores precios del mercado, tenemos una 
+          gran cantidad de opciones para elegir en un mercado que es muy amplio.
               
         </p>
       </div>
@@ -131,7 +170,8 @@
           <h2 class="mt-1">SOPORTE TECNICO</h2>
         </div>
         <div class="">
-          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus,labore et dolore magna Duis aute irure dolor in r adipisicing elit. Voluptatibus, corrupti. lorem
+          <p class="text-justify"><strong>Diagnóstico y reparación de PC, servidores y Notebooks.
+            Optimización y limpieza de virus y spyware. Instalación de periféricos: impresoras, scanners, webcams y otros.</strong>
           </p>
         </div>
       </div>
@@ -142,7 +182,7 @@
           <h2 class="mt-1">DISEÑO WEB</h2>
         </div>
         <div class="">
-          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus,labore et dolore magna Duis aute irure dolor in r adipisicing elit. Voluptatibus, corrupti. lorem
+          <p class="text-justify">Diseño de Imágen Corporativa, Planes a su Medida. Posicionamiento en Buscadores. Empresa de desarrollo de sitios web, Atención Personalizada en todo el país. Planes Economicos. Sitios Web a Medida. Amplie sus ventas.
           </p>
         </div>
       </div>
@@ -153,7 +193,7 @@
           <h2 class="mt-1">SOFTWARE LEGAL</h2>
         </div>
         <div class="">
-          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus,labore et dolore magna Duis aute irure dolor in r adipisicing elit. Voluptatibus, corrupti. lorem
+          <p class="text-justify">Es una iniciativa de las grandes empresas creadoras de software nacional e internacional para proteger los derechos de autor y la propiedad intelectual.
           </p>
         </div>
       </div>
@@ -164,7 +204,7 @@
           <h2 class="mt-1">HOSTING SERVER</h2>
         </div>
         <div class="">
-          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus,labore et dolore magna Duis aute irure dolor in r adipisicing elit. Voluptatibus, corrupti. lorem
+          <p class="text-justify">Hospeda tu sitio web en Hostinger y experimenta un hosting con tecnología de punta. Hosting rápido y seguro ¡El mejor precio del 2019 garantizado!
           </p>
         </div>
       </div>
@@ -172,5 +212,5 @@
     </div>
   </section>  
 
-
+</div>
 @endsection

@@ -1,5 +1,6 @@
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+<div class="conteiner-fluid">
+<nav class="">
 
         
     <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -17,7 +18,14 @@
         <li class="nav-item">
             <a class="nav-link" href="#">conocenos</a>
         </li>
-       
+        {{-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categoria</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                @foreach ($categories as $category)
+            <a class="dropdown-item" href="{{route('store-filtrado',$category->id)}}" >{{$category->name}}</a>
+                @endforeach
+            </div>
+           </li> --}}
         
     
  <!-- Right Side Of Navbar -->
@@ -66,3 +74,4 @@
 
 </div>
 </nav>                    
+</div>

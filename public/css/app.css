@@ -73,6 +73,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #f8fafc;
+  margin-top: 156px;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -616,6 +617,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 15px;
 }
 
 @media (min-width: 576px) {
@@ -745,6 +747,7 @@ pre code {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+  
 }
 
 .col {
@@ -4736,7 +4739,7 @@ input[type=button].btn-block {
   }
 
   .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 0.5rem;
+    padding-right: 3.5rem;
     padding-left: 0.5rem;
   }
 
@@ -5223,10 +5226,11 @@ input[type=button].btn-block {
 }
 
 .pagination {
-  display: flex;
+  display: inline-flex;
   padding-left: 0;
   list-style: none;
   border-radius: 0.25rem;
+
 }
 
 .page-link {
@@ -6958,7 +6962,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #0a022bde
+  /* background-color: #6cb2eb */
    !important;
 }
 
@@ -6966,11 +6970,11 @@ a.bg-primary:hover,
 a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #2176bd !important;
+  background-color: #6cb2eb !important;
 }
 
 .bg-secondary {
-  background-color: #6c757d !important;
+  background-color: #0a022b !important;
 }
 
 a.bg-secondary:hover,
@@ -6988,7 +6992,7 @@ a.bg-success:hover,
 a.bg-success:focus,
 button.bg-success:hover,
 button.bg-success:focus {
-  background-color: #2d995b !important;
+  background-color: #6cb2eb !important;
 }
 
 .bg-info {
@@ -8323,6 +8327,7 @@ button.bg-dark:focus {
 
 .h-50 {
   height: 50% !important;
+  border-style: groove;
 }
 
 .h-75 {

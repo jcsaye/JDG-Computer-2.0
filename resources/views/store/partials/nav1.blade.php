@@ -56,9 +56,9 @@
 @endguest
         </ul>
     </div>
-    <li class="nav-item ">
+    {{-- <li class="nav-item ">
         
         <a  class="nav-link btn button-red " href="{{url('admin/home')}}">admin</a>
-    </li>
+    </li> --}}
 
 </nav>

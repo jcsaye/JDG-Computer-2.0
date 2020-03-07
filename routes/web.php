@@ -13,7 +13,7 @@
 
 Route::get('/preguntas', function () {
 
-    return view ('preguntas');
+    return view ('store.preguntas');
 });
 
 
@@ -92,3 +92,5 @@ Route::resource('admin/category','Admin\CategoryController');
 Route::resource('admin/product', 'Admin\ProductController');
 
 Route::resource('admin/user', 'Admin\UserController');
+
+// redireccion para admin

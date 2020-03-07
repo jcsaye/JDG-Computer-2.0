@@ -12,10 +12,10 @@
             <a class="nav-link btn btn-primary" href="{{'/'}}">Conocenos<span class="sr-only ">(current)</span></a>
             </li>
             <li class="nav-item active">
-            <a class="nav-link btn btn-primary" href="{{'/preguntas'}}" >Servicios<span class="sr-only ">(current)</span></a>
+            <a class="nav-link btn btn-primary" href="{{'/preguntas'}}" >preguntas frecuentes<span class="sr-only ">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link btn btn-primary" href="#">Preguntas frecuentes<span class="sr-only ">(current)</span></a>
+                <a class="nav-link btn btn-primary" href="#">servicios<span class="sr-only ">(current)</span></a>
             </li>
 
             
@@ -56,5 +56,9 @@
 @endguest
         </ul>
     </div>
+    <li class="nav-item ">
+        
+        <a  class="nav-link btn button-red " href="{{url('admin/home')}}">admin</a>
+    </li>
 
 </nav>
